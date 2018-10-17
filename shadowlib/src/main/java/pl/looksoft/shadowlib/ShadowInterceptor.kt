@@ -17,8 +17,6 @@ class ShadowsInterceptor(private val context: Context, private val logger: Shado
 
     override fun intercept(chain: Interceptor.Chain): InflateResult {
         logger.log("current view: ${chain.request().name()}")
-        if (chain.request().name() == "pl.looksoft.shadowslib.ShadowLayout")
-            logger.log("breakpoint")
         val parameters = parametersParser.pullShadowParameters(chain.request().attrs())
         if (parameters?.hasValue() == true) {
             logger.log("parameters: $parameters")
