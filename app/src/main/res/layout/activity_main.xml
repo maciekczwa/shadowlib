@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/b1"
+            shadowLibBlur="5dp"
+            shadowLibColor="#FF0000"
+            shadowLibDx="10dp"
+            shadowLibDy="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b1 - auto add layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/b2"
+            shadowLibColor="#008080"
+            shadowLibDx="60dp"
+            shadowLibDy="-16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b2 - auto add layout"
+            app:layout_constraintLeft_toLeftOf="@id/b1"
+            app:layout_constraintTop_toBottomOf="@id/b1" />
+
+        <Button
+            android:id="@+id/b3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b3 - auto add layout"
+            app:layout_constraintLeft_toLeftOf="@id/b1"
+            app:layout_constraintTop_toBottomOf="@id/b2"
+            app:shadowLibBlur="1dp"
+            app:shadowLibColor="#330000FF"
+            app:shadowLibDx="12dp"
+            app:shadowLibDy="32dp"
+            app:shadowLibSpread="2dp" />
+
+        <pl.looksoft.shadowlib.ShadowLayout
+            android:id="@+id/b4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/b1"
+            app:layout_constraintTop_toBottomOf="@id/b3"
+            app:shadowLayoutBlur="1dp"
+            app:shadowLayoutColor="#33FF00FF"
+            app:shadowLayoutDx="12dp"
+            app:shadowLayoutDy="32dp"
+            app:shadowLayoutSpread="-10dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="b4 - layout test"
+                app:layout_constraintLeft_toLeftOf="@id/b1"
+                app:layout_constraintTop_toBottomOf="@id/b2" />
+
+        </pl.looksoft.shadowlib.ShadowLayout>
+
+        <Button
+            android:id="@+id/b5"
+            shadowLibBlur="1dp"
+            shadowLibColor="@color/colorAccent"
+            shadowLibDx="12dp"
+            shadowLibDy="32dp"
+            shadowLibSpread="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b5 - color reference test"
+            app:layout_constraintLeft_toLeftOf="@id/b1"
+            app:layout_constraintTop_toBottomOf="@id/b4" />
+
+        <Button
+            android:id="@+id/b6"
+            shadowLibBlur="@dimen/ten_dp"
+            shadowLibColor="#44444444"
+            shadowLibDx="@dimen/ten_dp"
+            shadowLibDy="@dimen/ten_dp"
+            shadowLibSpread="@dimen/ten_dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b6 - dimension reference test"
+            app:layout_constraintLeft_toLeftOf="@id/b1"
+            app:layout_constraintTop_toBottomOf="@id/b5" />
+
+        <Button
+            android:id="@+id/b7"
+            style="@style/ShadowValueStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b7 - value style test"
+            app:layout_constraintLeft_toLeftOf="@id/b1"
+            app:layout_constraintTop_toBottomOf="@id/b6" />
+
+        <Button
+            android:id="@+id/b8"
+            style="@style/ShadowReferenceStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b8 - reference style test"
+            app:layout_constraintLeft_toLeftOf="@id/b1"
+            app:layout_constraintTop_toBottomOf="@id/b7" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

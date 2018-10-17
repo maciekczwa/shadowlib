@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ShadowValueStyle">
+        <item name="shadowLibBlur">10dp</item>
+        <item name="shadowLibColor">#55AA0000</item>
+        <item name="shadowLibDx">-10dp</item>
+        <item name="shadowLibDy">10dp</item>
+        <item name="shadowLibSpread">0dp</item>
+    </style>
+
+    <style name="ShadowReferenceStyle">
+        <item name="shadowLibBlur">@dimen/ten_dp</item>
+        <item name="shadowLibColor">@color/colorPrimaryDark</item>
+        <item name="shadowLibDx">@dimen/ten_dp</item>
+        <item name="shadowLibDy">@dimen/ten_dp</item>
+        <item name="shadowLibSpread">@dimen/ten_dp</item>
+    </style>
+</resources>

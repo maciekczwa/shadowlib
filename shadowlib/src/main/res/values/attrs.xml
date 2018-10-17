@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="shadowLibDx" format="dimension" />
+    <attr name="shadowLibDy" format="dimension" />
+    <attr name="shadowLibBlur" format="dimension" />
+    <attr name="shadowLibSpread" format="dimension" />
+    <attr name="shadowLibColor" format="color" />
+
+    <declare-styleable name="ShadowLayout">
+        <attr name="isShadowed" format="boolean" />
+        <attr name="shadowLayoutDx" format="dimension" />
+        <attr name="shadowLayoutDy" format="dimension" />
+        <attr name="shadowLayoutBlur" format="dimension" />
+        <attr name="shadowLayoutSpread" format="dimension" />
+        <attr name="shadowLayoutColor" format="color" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public name="shadowX" type="attr" />
+    <public name="shadowY" type="attr" />
+    <public name="shadowBlur" type="attr" />
+    <public name="shadowSpread" type="attr" />
+    <public name="shadowColor" type="attr" />
+</resources>
