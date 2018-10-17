@@ -7,6 +7,10 @@ import io.github.inflationx.viewpump.Interceptor
 
 class ShadowsInterceptor(private val context: Context, private val logger: ShadowsLogger = EmptyLogger) : Interceptor {
 
+    init {
+        LOGGER = logger
+    }
+
     private val parametersParser = ParametersParser(context)
 
     override fun intercept(chain: Interceptor.Chain): InflateResult {
@@ -39,4 +43,11 @@ class ShadowsInterceptor(private val context: Context, private val logger: Shado
         }
 
     }
+}
+
+var LOGGER: ShadowsLogger = object : ShadowsLogger {
+    override fun log(text: String) {
+
+    }
+
 }
