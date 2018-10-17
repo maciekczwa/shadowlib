@@ -24,6 +24,7 @@ import android.graphics.*
 import android.os.Build
 import android.util.AttributeSet
 import android.view.View
+import android.view.ViewGroup
 import android.widget.FrameLayout
 
 /**
@@ -66,6 +67,8 @@ class ShadowLayout : FrameLayout {
     private val viewBounds = Rect()
     // Check whether need to redraw shadow
     private var invalidateShadow = true
+
+    var blockLayoutParams = false
 
     // Detect if shadow is visible
     var isShadowed: Boolean = true
@@ -215,5 +218,11 @@ class ShadowLayout : FrameLayout {
         // Draw child`s
         super.dispatchDraw(canvas)
     }
-
+    
+    override fun setLayoutParams(params: ViewGroup.LayoutParams?) {
+        LOGGER.log("sl setLayoutParams: ${params?.width} ${params?.height}")
+        if(!blockLayoutParams) {
+            super.setLayoutParams(params)
+        }
+    }
 }
