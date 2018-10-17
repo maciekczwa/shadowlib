@@ -13,3 +13,6 @@
 - Add findShadowedView methods
 - Small build fixes
 - Remove some debug logs
+
+## Version 1.0.2 *(2018-10-17)*
+- Change implementation to compileOnly in dependencies
