@@ -18,18 +18,22 @@ class ShadowsInterceptor(private val context: Context, private val logger: Shado
             logger.log("parameters: $parameters")
             val result = chain.proceed(chain.request())
             val inside = result.view()
-            val sl = ShadowLayout(context, chain.request().attrs())
-            sl.addView(inside)
-            sl.shadowDx = (parameters.shadowX ?: 0.0f)
-            sl.shadowDy = (parameters.shadowY ?: 0.0f)
-            sl.shadowColor = parameters.shadowColor ?: 0
-            sl.shadowSpread = (parameters.shadowSpread ?: 0.0f)
-            sl.shadowBlur = (parameters.shadowBlur ?: 0.0f)
-            return InflateResult.builder().attrs(chain.request().attrs())
-                    .context(context)
-                    .name(sl.javaClass.name)
-                    .view(sl)
-                    .build()
+            if (inside != null) {
+                val sl = ShadowLayout(context, chain.request().attrs())
+                sl.addView(inside)
+                sl.shadowDx = (parameters.shadowX ?: 0.0f)
+                sl.shadowDy = (parameters.shadowY ?: 0.0f)
+                sl.shadowColor = parameters.shadowColor ?: 0
+                sl.shadowSpread = (parameters.shadowSpread ?: 0.0f)
+                sl.shadowBlur = (parameters.shadowBlur ?: 0.0f)
+                return InflateResult.builder().attrs(chain.request().attrs())
+                        .context(context)
+                        .name(sl.javaClass.name)
+                        .view(sl)
+                        .build()
+            } else {
+                return result
+            }
         } else {
             return chain.proceed(chain.request())
         }
