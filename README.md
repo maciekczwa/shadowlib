@@ -133,3 +133,12 @@ You can also use styles:
         <item name="shadowLibSpread">@dimen/ten_dp</item>
     </style>
 ```
+
+Warning kotlin extensions won't work correctly for views which are put into ShadowLayout by injection, because ShadowLayout takes id of original view.
+Please use ```Activity.findShadowedView(@IdRes id: Int)``` or ```View.findShadowedView(@IdRes id: Int)```
+
+## Known Problems
+- Kotlin extensions views don't work correctly when using ViewPump injection
+- View will be larger than on preview because of added padding (to show shadow) when using ViewPump incjection
+
+## Changelog
