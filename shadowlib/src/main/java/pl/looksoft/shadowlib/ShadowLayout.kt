@@ -218,7 +218,11 @@ class ShadowLayout : FrameLayout {
         // Draw child`s
         super.dispatchDraw(canvas)
     }
-    
+
+    fun <T> getChild(): T {
+        return getChildAt(0) as T
+    }
+
     override fun setLayoutParams(params: ViewGroup.LayoutParams?) {
         LOGGER.log("sl setLayoutParams: ${params?.width} ${params?.height}")
         if(!blockLayoutParams) {
